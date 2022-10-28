@@ -1,0 +1,6 @@
+- name: Joining worker nodes with kubernetes master
+    become: true
+    become_user: root
+    shell: |
+     cat /home/k8s/join_token | tail -2 > out.sh
+     sh out.sh
