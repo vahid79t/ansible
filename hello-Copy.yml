@@ -1,0 +1,14 @@
+---
+- name: Ping Test Connectivity
+  hosts: all
+  become: yes
+  tasks:
+  - name: apt install
+    apt:
+      name:  apache2
+      state:  present
+      update_cache:  yes
+  - name:  service
+    service:
+      name:  apache2
+      state:  started
